@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "financeagile",
+    "slug": "financeagile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "financeagile"
+}
