@@ -1,12 +1,21 @@
 import {useState} from 'react';
-import { TouchableOpacityProps } from 'react-native';
+import { Modal, ModalProps, TouchableOpacityProps } from 'react-native';
 import {
-    Container
+    Container,
+    Content,
+    ComponentTitle,
+    MenuTitleFinance,
+    MenutTitleAgile,
+    HamburguerMenu
 } from './style';
 
-interface PropsModal extends TouchableOpacityProps{
+interface PropsModal extends TouchableOpacityProps{ 
     OpenModal: () => void;
     CloseModal: () => void;
+}
+
+interface PropsModal extends ModalProps{
+    visible: boolean;
 }
 
 export function Header({OpenModal, CloseModal, ...rest}: PropsModal){
@@ -22,7 +31,18 @@ export function Header({OpenModal, CloseModal, ...rest}: PropsModal){
 
     return(
         <Container> 
-            
+            <Content>
+                <ComponentTitle>
+                    <MenuTitleFinance>
+                        finance
+                    </MenuTitleFinance>
+                    <MenutTitleAgile>
+                        agile
+                    </MenutTitleAgile>
+                </ComponentTitle>
+            <Modal visible={handleOpenModal}>
+            </Modal>
+            </Content>
         </Container>
     );
-};
+}
